@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-// const reviewSchema = new Schema({
-//   content: String,
-//   rating: {
-//     type: Number,
-//     enum: [0, 1, 2, 3, 4 ,5],
-//   }
-// }, {
-//   timestamps: true
-// });
+const reviewSchema = new Schema({
+  content: String,
+  rating: {
+    type: Number,
+    enum: [0, 1, 2, 3, 4 ,5],
+  }
+}, {
+  timestamps: true
+});
 
 const productSchema = new Schema({
   title: {
@@ -38,11 +38,7 @@ const productSchema = new Schema({
   colour: {
     type: String,
   },
-  // review:[reviewSchema],
-  review: {
-    type: String,
-    required: true
-  },
+  review:[reviewSchema],
   dupe: {
     type: String,
     required: true
