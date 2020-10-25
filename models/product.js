@@ -2,6 +2,13 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
+// const imageSchema = new Schema({
+//   img: {
+//       data: Buffer, 
+//       contentType: String 
+//     },
+// }); 
+
 const reviewSchema = new Schema({
   content: String,
   rating: {
@@ -39,6 +46,7 @@ const productSchema = new Schema({
     type: String,
   },
   review:[reviewSchema],
+  // img:[imageSchema],
   dupe: {
     type: String,
     required: true
