@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Mongoose Movies</title>
+</head>
+<body>
+  <h1>Movie List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Brand</th>
+        <th>Dupes</th>
+        <th>Description</th>
+        <th>Colour</th>
+        <th>Price</th>
+        <th>Ratings</th>
+        <th>Review</th>
+      </tr>
+    </thead>
+    <tbody>
+        
+      <% product.forEach(function(p) { %>
+        <tr>
+          <td><%= p.title %></td>
+          <td><%= p.brand %></td>
+          <td><%= p.dupe %></td>
+          <td><%= p.description %></td>
+          <td><%= p.colour %></td>
+          <td><%= p.price %></td>
+          <td><%= p.rating %></td>
+          <td><%= p.review %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>

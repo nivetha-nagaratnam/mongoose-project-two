@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Enter a New Product</h2>
+<form action="/products" method="POST">
+  <label>Title:
+    <input type="text" name="title">
+  </label><br>
+  <label>Brand:
+    <input type="text" name="brand">
+  </label><br>
+   <label>Dupes:
+    <input type="text" name="dupe">
+  </label><br>
+  <label>Description:
+    <input type="text" name="description">
+  </label><br>
+  <label>Colour:
+    <input type="text" name="colour">
+  </label><br>
+  <label>Price:
+    <input type="text" name="price">
+  </label><br>
+  <label>Ratings:
+    <select name="rating">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </label><br>
+  <label>Review:
+    <input type="text" name="review">
+  </label><br><br>
+  <input type="submit" value="Add Product">
+</form>
+
+
+</body> 
+</html>
