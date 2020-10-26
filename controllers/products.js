@@ -1,11 +1,10 @@
 const Product = require('../models/product');
 
 function show(req, res) {
-  Product.findById(req.params.id, function(err, product) {
+  Product.findById(req.params.id).populate('img').exec(function(err, product) {
     res.render('products/show', { title: 'Product Detail', product});
   });
 }
-
 function index(req, res) {
   Product.find({}, function(err, product) {
   res.render('products/index',{ title: 'All Products', product})

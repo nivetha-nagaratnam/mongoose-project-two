@@ -2,13 +2,6 @@ const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
 
-// const imageSchema = new Schema({
-//   img: {
-//       data: Buffer, 
-//       contentType: String 
-//     },
-// }); 
-
 const reviewSchema = new Schema({
   content: String,
   rating: {
@@ -46,7 +39,7 @@ const productSchema = new Schema({
     type: String,
   },
   review:[reviewSchema],
-  // img:[imageSchema],
+  img: [{type: Schema.Types.ObjectId, ref: 'Image'}],
   dupe: {
     type: String,
     required: true
@@ -54,6 +47,7 @@ const productSchema = new Schema({
 },{
     timestamps: true
 });
+
 
 // Compile the schema into a model and export it
 module.exports = mongoose.model('Product', productSchema);

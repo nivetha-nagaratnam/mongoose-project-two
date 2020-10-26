@@ -30,7 +30,7 @@ app.use(bodyParser.json())
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/', reviewsRouter);
-app.use('/images', imagesRouter);
+app.use('/', imagesRouter);
 
 
 // catch 404 and forward to error handler
