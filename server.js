@@ -11,6 +11,7 @@ const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/products');
 const reviewsRouter = require('./routes/reviews');
 const imagesRouter = require('./routes/images');
+const dupesRouter = require('./routes/dupes');
 
 var app = express();
 var bodyParser = require('body-parser'); 
@@ -31,6 +32,7 @@ app.use('/', indexRouter);
 app.use('/products', productsRouter);
 app.use('/', reviewsRouter);
 app.use('/', imagesRouter);
+app.use('/', dupesRouter);
 
 
 // catch 404 and forward to error handler

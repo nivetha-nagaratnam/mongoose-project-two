@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <hr> 
+    <h1>Dupes</h1> 
+    <div> 
+      <% product.imgs.forEach(function(images) { %>  
+        <div> 
+            <div> 
+                <img src="data:image/<%=images.imgs.contentType%>;base64, 
+                <%=images.imgs.data.toString('base64')%>"> 
+            </div> 
+            <div> 
+              <h5><%= images.name %></h5> 
+              <h5><%= images.price %></h5> 
+          </div> 
+        </div> 
+        <% }) %> 
+    </div>  
+</body>
+</html>
+

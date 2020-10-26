@@ -13,9 +13,10 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }); 
 
-const imagesCtrl = require('../controllers/images');
+const dupesCtrl = require('../controllers/dupes');
 
-router.get('/products/:id/images/new', imagesCtrl.new);
-router.post('/products/:id/images', upload.single('image'), imagesCtrl.create);
+router.get('/products/:id/dupes/new', dupesCtrl.new);
+router.get('/products/:id/dupes/show', dupesCtrl.show);
+router.post('/products/:id/dupes', upload.single('image'), dupesCtrl.create);
 
 module.exports = router;

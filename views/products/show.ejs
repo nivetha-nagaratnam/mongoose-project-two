@@ -3,23 +3,8 @@
 <section>
   <div>Title: </div>
   <div><%= product.title %></div>
-  <div>Brand: </div>
-  <div><%= product.brand %></div>
-  <div>Dupes: </div>
-  <div><%= product.dupe %></div>
-  <div>Description: </div>
-  <div><%= product.description %></div>
-  <div>Colour: </div>
-  <div><%= product.colour %></div>
-  <div>Price: </div>
-  <div><%= product.price %></div>
-  <div>Ratings: </div>
-  <div><%= product.rating %></div>
-</section>
-
-<br><br><h3>Images <a href="/products/<%= product._id %>/images/new">ADD IMAGE</a></td></h3>
+  <br><br><h3><a href="/products/<%= product._id %>/images/new">ADD IMAGE</a></td></h3>
     <hr> 
-    
     <h1>Uploaded Images</h1> 
     <div> 
       <% product.img.forEach(function(image) { %>  
@@ -31,6 +16,21 @@
         </div> 
         <% }) %> 
     </div>  
+  <div>Brand: </div>
+  <div><%= product.brand %></div>
+  <div>Description: </div>
+  <div><%= product.description %></div>
+  <div>Colour: </div>
+  <div><%= product.colour %></div>
+  <div>Price: </div>
+  <div><%= product.price %></div>
+  <div>Ratings: </div>
+  <div><%= product.rating %></div>
+</section>
+
+<br><br><h3><a href="/products/<%= product._id %>/dupes/new">ADD DUPE</a></td></h3>
+
+<br><br><h3><a href="/products/<%= product._id %>/dupes/show">VIEW DUPE</a></td></h3>
 
 <br><br><h2>Reviews</h2>
 <form method="POST"

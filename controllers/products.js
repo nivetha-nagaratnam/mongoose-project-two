@@ -5,6 +5,7 @@ function show(req, res) {
     res.render('products/show', { title: 'Product Detail', product});
   });
 }
+
 function index(req, res) {
   Product.find({}, function(err, product) {
   res.render('products/index',{ title: 'All Products', product})

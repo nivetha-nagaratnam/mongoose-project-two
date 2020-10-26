@@ -16,7 +16,6 @@ var upload = multer({ storage: storage });
 
 var Product = require('../models/product');
 var Image = require('../models/image');
-const product = require('../models/product');
 
 function newProduct(req, res) { 
     Product.findById(req.params.id, function (err, product){ 
