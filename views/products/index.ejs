@@ -3,29 +3,29 @@
   <table>
     <thead>
       <tr>
-        <th>Title</th>
+        <th>Name</th>
         <th>Brand</th>
-        <th>Dupes</th>
         <th>Description</th>
         <th>Colour</th>
         <th>Price</th>
         <th>Ratings</th>
-        <th>Review</th>
       </tr>
     </thead>
     <tbody>
         
       <% product.forEach(function(p) { %>
         <tr>
-          <td><%= p.title %></td>
+          <td><%= p.name %></td>
           <td><%= p.brand %></td>
-          <td><%= p.dupe %></td>
           <td><%= p.description %></td>
           <td><%= p.colour %></td>
           <td><%= p.price %></td>
           <td><%= p.rating %></td>
-          <td><%= p.review %></td>
           <td><a href="/products/<%= p._id %>">DETAILS</a></td>
+          <td><form action="/products/<%= p.id %>?_method=DELETE" method="POST">
+                <button type="submit">DELETE</button>
+              </form>
+          </td>
         </tr>
       <% }); %>
     </tbody>

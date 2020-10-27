@@ -13,7 +13,7 @@ const reviewSchema = new Schema({
 });
 
 const productSchema = new Schema({
-  title: {
+  name: {
     type: String,
     required: true
   },

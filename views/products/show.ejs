@@ -1,9 +1,6 @@
 <%- include('../partials/header') %>
-
-<section>
-  <div>Title: </div>
-  <div><%= product.title %></div>
-  <br><br><h3><a href="/products/<%= product._id %>/images/new">ADD IMAGE</a></td></h3>
+   <!-- code to upload/retrive images was taken from 
+        https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
     <hr> 
     <h1>Uploaded Images</h1> 
     <div> 
@@ -16,6 +13,10 @@
         </div> 
         <% }) %> 
     </div>  
+
+<section>
+  <div>Name: </div>
+  <div><%= product.name %></div>
   <div>Brand: </div>
   <div><%= product.brand %></div>
   <div>Description: </div>
@@ -27,7 +28,7 @@
   <div>Ratings: </div>
   <div><%= product.rating %></div>
 </section>
-
+<br><br><h3><a href="/products/<%= product._id %>/images/new">ADD IMAGE</a></td></h3>
 <br><br><h3><a href="/products/<%= product._id %>/dupes/new">ADD DUPE</a></td></h3>
 
 <br><br><h3><a href="/products/<%= product._id %>/dupes/show">VIEW DUPE</a></td></h3>

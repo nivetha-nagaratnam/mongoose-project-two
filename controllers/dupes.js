@@ -1,3 +1,6 @@
+// code to upload/retrive images was taken from 
+//https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/
+
 var fs = require('fs'); 
 
 var path = require('path'); 

@@ -27,10 +27,17 @@ function create(req, res) {
   });
 }
 
+function deleteProduct(req, res) {
+  Product.findByIdAndRemove(req.params.id,function(err, product){
+    res.redirect('products/')
+  });
+}
+
 
 module.exports = {
     new: newProduct,
     create,
     index,
-    show
+    show,
+    delete:deleteProduct
   };
