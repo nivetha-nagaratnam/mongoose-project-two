@@ -15,7 +15,13 @@ var upload = multer({ storage: storage });
 
 const imagesCtrl = require('../controllers/images');
 
-router.get('/products/:id/images/new', imagesCtrl.new);
-router.post('/products/:id/images', upload.single('image'), imagesCtrl.create);
+router.get('/products/:id/images/new', isLoggedIn, imagesCtrl.new);
+router.post('/products/:id/images',  upload.single('image'), imagesCtrl.create);
+
+function isLoggedIn(req, res, next) {
+  if ( req.isAuthenticated() ) return next();
+  res.send('Login')
+  //res.redirect('/auth/google');
+}
 
 module.exports = router;

@@ -15,8 +15,14 @@ var upload = multer({ storage: storage });
 
 const dupesCtrl = require('../controllers/dupes');
 
-router.get('/products/:id/dupes/new', dupesCtrl.new);
+router.get('/products/:id/dupes/new', isLoggedIn, dupesCtrl.new);
 router.get('/products/:id/dupes/show', dupesCtrl.show);
 router.post('/products/:id/dupes', upload.single('image'), dupesCtrl.create);
+
+function isLoggedIn(req, res, next) {
+  if ( req.isAuthenticated() ) return next();
+  res.send('Login')
+  //res.redirect('/auth/google');
+}
 
 module.exports = router;

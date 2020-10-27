@@ -12,28 +12,31 @@ const reviewSchema = new Schema({
   timestamps: true
 });
 
+const userSchema = new Schema({ 
+  name: String,
+  email: String,
+  googleId: String,
+}, {
+  timestamps: true
+}); 
+
 const productSchema = new Schema({
   name: {
     type: String,
-    required: true
   },
   price: {
     type: Number,
     min: 0,
-    required: true
   },
   rating: {
     type: Number,
     enum: [0, 1, 2, 3, 4 ,5],
-    required: true
   },
   description: {
     type: String,
-    required: true
   },
   brand: {
     type: String,
-    required: true
   },
   colour: {
     type: String,
