@@ -1,18 +1,17 @@
 <%- include('../partials/header') %>
    <!-- code to upload/retrive images was taken from 
         https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
-    <hr> 
-    <h1>Uploaded Images</h1> 
-    <div> 
-      <% product.img.forEach(function(image) { %>  
-        <div> 
-            <div> 
-                <img src="data:image/<%=image.img.contentType%>;base64, 
-                <%=image.img.data.toString('base64')%>"> 
-            </div> 
-        </div> 
-        <% }) %> 
-    </div>  
+
+<div> 
+    <% product.img.forEach(function(image) { %>  
+<div> 
+<div> 
+    <img src="data:image/<%=image.img.contentType%>;base64, 
+    <%=image.img.data.toString('base64')%>"> 
+</div> 
+</div> 
+     <% }) %> 
+</div> 
 
 <section>
   <div>Name: </div>
@@ -28,9 +27,9 @@
   <div>Ratings: </div>
   <div><%= product.rating %></div>
 </section>
+
 <br><br><h3><a href="/products/<%= product._id %>/images/new">ADD IMAGE</a></td></h3>
 <br><br><h3><a href="/products/<%= product._id %>/dupes/new">ADD DUPE</a></td></h3>
-
 <br><br><h3><a href="/products/<%= product._id %>/dupes/show">VIEW DUPE</a></td></h3>
 
 <br><br><h2>Reviews</h2>

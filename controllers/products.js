@@ -29,7 +29,7 @@ function create(req, res) {
 
 function deleteProduct(req, res) {
   Product.findByIdAndRemove(req.params.id,function(err, product){
-    res.redirect('products/')
+    res.redirect('/')
   });
 }
 

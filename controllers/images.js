@@ -26,7 +26,7 @@ function newProduct(req, res) {
             console.log(err); 
         } 
         else { 
-            res.render('images/new',{product}); 
+            res.render('images/new',{title: 'Add Image', product}); 
         } 
     }); 
 }
@@ -58,7 +58,6 @@ function create(req, res, next) {
     });
         
 }; 
-
   
   module.exports = {
       new: newProduct,

@@ -26,7 +26,7 @@ function newProduct(req, res) {
             console.log(err); 
         } 
         else { 
-            res.render('dupes/new',{product}); 
+            res.render('dupes/new',{title: 'Add Dupe', product}); 
         } 
     }); 
 }
