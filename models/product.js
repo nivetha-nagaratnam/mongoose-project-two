@@ -50,6 +50,9 @@ const productSchema = new Schema({
   review:[reviewSchema],
   img: [{type: Schema.Types.ObjectId, ref: 'Image'}],
   imgs: [{type: Schema.Types.ObjectId, ref: 'Dupe'}],
+  category: {
+    type: String,
+  }
 },{
     timestamps: true
 });
