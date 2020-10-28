@@ -4,7 +4,7 @@ const productsCtrl = require('../controllers/products');
 
 router.get('/index', productsCtrl.index)
 router.get('/new', isLoggedIn, productsCtrl.new);
-router.get('/:id', productsCtrl.show);
+router.get('/:id', isLoggedIn, productsCtrl.show);
 router.post('/', isLoggedIn, productsCtrl.create);
 router.delete('/:id', isLoggedIn, productsCtrl.delete);
 

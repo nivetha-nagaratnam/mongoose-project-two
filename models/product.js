@@ -20,6 +20,12 @@ const userSchema = new Schema({
   timestamps: true
 }); 
 
+const likeSchema = new Schema({ 
+  likes_count: Number,
+}, {
+  timestamps: true
+}); 
+
 const productSchema = new Schema({
   name: {
     type: String,

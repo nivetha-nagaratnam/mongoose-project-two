@@ -2,7 +2,7 @@ const Product = require('../models/product');
 
 function show(req, res) {
   Product.findById(req.params.id).populate('img').exec(function(err, product) {
-    res.render('products/show', { title: 'Product Detail', product});
+    res.render('products/show', { title: 'Product Detail', product, user: req.user, name: req.query.name});
   });
 }
 
@@ -13,7 +13,7 @@ function index(req, res) {
 }
 
 function newProduct(req, res) {
-    res.render('products/new',{ title: 'Add Product' });
+    res.render('products/new',{ title: 'Add Product', user: req.user, name: req.query.name});
   }
 
 function create(req, res) {

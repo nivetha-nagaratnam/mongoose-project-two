@@ -1,7 +1,20 @@
 <%- include('../partials/header') %>
    <!-- code to upload/retrive images was taken from 
         https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
-
+        <head>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          <style>
+          .fa {
+            font-size: 50px;
+            cursor: pointer;
+            user-select: none;
+          }
+          
+          .fa:hover {
+            color: darkblue;
+          }
+          </style>
+          </head>
 <div> 
     <% product.img.forEach(function(image) { %>  
 <div> 
@@ -12,6 +25,7 @@
 </div> 
      <% }) %> 
 </div> 
+
 
 <section>
   <div>Name: </div>
@@ -27,6 +41,13 @@
   <div>Ratings: </div>
   <div><%= product.rating %></div>
 </section>
+
+<!-- I got this from https://likebtn.com/en/ -->
+<!-- LikeBtn.com BEGIN -->
+<span class="likebtn-wrapper" data-theme="custom" data-icon_l="hrt2" data-icon_l_c_v="#fb0545" data-icon_d_c_v="#000000" data-ef_voting="buzz" data-identifier="like" data-counter_zero_show="true" data-share_size="large"></span>
+<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+<!-- LikeBtn.com END -->
+
 
 <br><br><h3><a href="/products/<%= product._id %>/images/new">ADD IMAGE</a></td></h3>
 <br><br><h3><a href="/products/<%= product._id %>/dupes/new">ADD DUPE</a></td></h3>

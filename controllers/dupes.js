@@ -26,7 +26,7 @@ function newProduct(req, res) {
             console.log(err); 
         } 
         else { 
-            res.render('dupes/new',{title: 'Add Dupe', product}); 
+            res.render('dupes/new',{title: 'Add Dupe', product, user: req.user, name: req.query.name}); 
         } 
     }); 
 }
@@ -63,7 +63,7 @@ function create(req, res, next) {
 
 function show(req, res) {
     Product.findById(req.params.id).populate('imgs').exec(function(err, product) {
-      res.render('dupes/show', { title: 'Dupes Detail', product});
+      res.render('dupes/show', { title: 'Dupes Detail', product, user: req.user, name: req.query.name});
     });
   }
 

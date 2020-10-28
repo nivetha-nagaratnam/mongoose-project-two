@@ -3,6 +3,16 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1{
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+}
+img {
+
+  height: 700px;
+  width: 1820px;
+}
+
 a {
-  color: #00B7FF;
+  color: #050505;
 }
