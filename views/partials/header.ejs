@@ -18,7 +18,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active"> <a class="nav-link" href="/products/new"  style = "color: #070707"<%- title === 'Add Product' ? 'class="active"' : '' %>>ADD PRODUCT</a></li>
+        <% if (user) { %>
         <li class="nav-item active"><a class="nav-link" href="/products/index"  style = "color: #070707"<%- title === 'All Products' ? 'class="active"' : '' %>>ALL PRODUCTS</a></li>
+        <% } %>
         <li class="nav-item active">
           <% if (user) { %>
             <a class="nav-link"  href="/logout" style = "color: #070707"<%- title === 'Log Out' ? 'class="active"' : '' %>>LOG OUT</a>

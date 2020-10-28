@@ -7,8 +7,8 @@ function show(req, res) {
 }
 
 function index(req, res) {
-  Product.find({}, function(err, product) {
-  res.render('products/index',{ title: 'All Products', product, user: req.user, name: req.query.name});
+  Product.find({}).populate('img').exec( function(err, product) {
+    res.render('products/index',{ title: 'All Products', product, user: req.user, name: req.query.name});
   });
 }
 
