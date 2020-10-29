@@ -13,25 +13,25 @@ function index(req, res) {
 }
 
 function indexLips(req, res) {
-  Product.find({category: 'lips'}).populate('imgs').exec(function(err, product) {
+  Product.find({category: 'lips'}).populate('img').exec(function(err, product) {
     res.render('products/lips', { title: 'Lip Products', product, user: req.user, name: req.query.name});
   });
 }
 
 function indexFace(req, res) {
-  Product.find({category: 'face'}).populate('imgs').exec(function(err, product) {
+  Product.find({category: 'face'}).populate('img').exec(function(err, product) {
     res.render('products/face', { title: 'Face Products', product, user: req.user, name: req.query.name});
   });
 }
 
 function indexCheeks(req, res) {
-  Product.find({category: 'cheeks'}).populate('imgs').exec(function(err, product) {
+  Product.find({category: 'cheeks'}).populate('img').exec(function(err, product) {
     res.render('products/cheeks', { title: 'Cheek Products', product, user: req.user, name: req.query.name});
   });
 }
 
 function indexEyes(req, res) {
-  Product.find({category: 'eyes'}).populate('imgs').exec(function(err, product) {
+  Product.find({category: 'eyes'}).populate('img').exec(function(err, product) {
     res.render('products/eyes', { title: 'Eye Products', product, user: req.user, name: req.query.name});
   });
 }

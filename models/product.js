@@ -35,8 +35,8 @@ const productSchema = new Schema({
     min: 0,
   },
   rating: {
-    type: Number,
-    enum: [0, 1, 2, 3, 4 ,5],
+    type: String,
+    //enum: [0, 1, 2, 3, 4 ,5],
   },
   description: {
     type: String,

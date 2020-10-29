@@ -7,12 +7,14 @@
           <div class="card-deck">
             <% product.forEach(function(p) { %>
               <div class="view overlay">
-                <% p.imgs.forEach(function(image) { %>  
-                  <img class="card-img-top" src="data:image/<%=image.imgs.contentType%>;base64, 
-                   <%=image.imgs.data.toString('base64')%>"> 
+                <% p.img.forEach(function(image) { %>  
+                  <img class="card-img-top" src="data:image/<%=image.img.contentType%>;base64, 
+                   <%=image.img.data.toString('base64')%>"> 
                    <% }) %> 
                   <div class="card-body">
                       <p class="card-text"><%= p.name %> </p>
+                      <p class="card-text"><%= '$' + p.price %> </p>
+                      <p class="card-text"><%= p.rating %> </p>
                   </div>
                   <div class="card-footer">
                     <a href="/products/<%= p._id %>" style = "color: #070707" class="btn btn-primary">DETAILS</a> 

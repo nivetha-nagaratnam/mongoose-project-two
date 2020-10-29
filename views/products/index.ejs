@@ -12,6 +12,8 @@
                    <% }) %> 
                   <div class="card-body">
                       <p class="card-text"><%= p.name %> </p>
+                      <p class="card-text"><%= '$' + p.price %> </p>
+                      <p class="card-text"><%= p.rating %> </p>
                   </div>
                   <div class="card-footer">
                     <a href="/products/<%= p._id %>" style = "color: #070707" class="btn btn-primary">DETAILS</a> 
