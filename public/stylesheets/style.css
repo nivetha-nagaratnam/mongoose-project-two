@@ -1,12 +1,15 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-h1{
+h1  {
   font-family: 'Dancing Script', cursive;
   font-size: 40px;
 }
+
 #front {
   max-width: 100%;
   width: 1820px;
@@ -78,4 +81,125 @@ a {
   padding:10px;
 }
 
+.right  {
+  text-align: right;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+
+.left-side {
+  width: 65%;
+  position: relative;
+}
+ 
+.right-side {
+  width: 35%;
+  margin-top: 60px;
+}
+
+
+.left-side img {
+  width: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+.line {  
+  border-bottom: 1px solid #E1E8EE;
+  width: 81.7%;
+  margin-left:115px;
+ }
+
+.product-header {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+
+.product-header h2 {
+  font-weight: 300;
+  font-size: 40px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-header h3 {
+  font-size:25px;
+  color: #43484D;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.product-header p {
+  font-size: 20px;
+  font-weight: 300;
+  color: #000000;
+  line-height: 24px;
+}
+ 
+.product-body {
+  margin-bottom: 30px;
+
+}
+
+.product-links {
+  margin-bottom: 20px;
+}
+
+.product-links {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+ 
+.text-left a {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.rate-link  {
+  margin-left:900px;
+  width: 33.33%;
+  padding: 5px;
+}
+
+.add-dupe a {
+  width: 22%;
+  padding: 5px;
+}
+
+.text-left span {
+  float: right;
+  width: 30%;
+  padding: 5px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.price span {
+  font-size: 20px;
+  font-weight: 300;
+  color: #43474D;
+  margin-right: 20px;
+}
+
+.bottom {
+  text-align: center;
+  border-bottom: 1px solid #E1E8EE;
+}
+
+.col-md-10{
+  margin-left: 100px;
+}
+
+ 
 

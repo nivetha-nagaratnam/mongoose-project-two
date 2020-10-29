@@ -1,56 +1,57 @@
 <%- include('../partials/header') %>
    <!-- code to upload/retrive images was taken from 
         https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
-        <head>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           
           
-          <style>
-          .fa {
-            font-size: 50px;
-            cursor: pointer;
-            user-select: none;
+<style>
+.fa {
+font-size: 50px;
+cursor: pointer;
+user-select: none;
+}
+          
+.fa:hover {
+ color: darkblue;
           }
-          
-          .fa:hover {
-            color: darkblue;
-          }
-          </style>
-          </head>
-<div> 
+</style>
+</head>
+
+<main class="container">
+
+<div class = "left-side">
+  <div id = "imageProduct"> 
     <% product.img.forEach(function(image) { %>  
-<div> 
-<div> 
-    <img src="data:image/<%=image.img.contentType%>;base64, 
+    <div> 
+    <div> 
+     <img src="data:image/<%=image.img.contentType%>;base64, 
     <%=image.img.data.toString('base64')%>"> 
-</div> 
-</div> 
+    </div> 
+    </div> 
      <% }) %> 
-</div> 
+  </div> 
+</div>
 
 
-<section>
-  <div>Name: </div>
-  <div><%= product.name %></div>
-  <div>Brand: </div>
-  <div><%= product.brand %></div>
-  <div>Description: </div>
-  <div><%= product.description %></div>
-  <div>Colour: </div>
-  <div><%= product.colour %></div>
-  <div>Price: </div>
-  <div><%= product.price %></div>
-  <div>Ratings: </div>
-  <div><%= product.rating %></div>
-</section>
+<div class = "right-side">
 
-<!-- I got this from https://likebtn.com/en/ -->
-<!-- LikeBtn.com BEGIN -->
-<span class="likebtn-wrapper" data-theme="custom" data-icon_l="hrt2" data-icon_l_c_v="#fb0545" data-icon_d_c_v="#000000" data-ef_voting="buzz" data-identifier="like" data-counter_zero_show="true" data-share_size="large"></span>
-<script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
-<!-- LikeBtn.com END -->
+  <div class = "product-header">
+    <h3><%= product.brand %></h3>
+    <h2><%= product.name %></h2>
+    <p><%= product.rating%></p>
+  </div>
 
-<div class="modal fade" id="modalRegisterForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  <div class = "product-body">
+    <p> Shade: <%= product.colour %></p>
+    <p><%= product.description %></p>
+  </div>
+
+  <div class = "product-links">
+    <div class="links">
+
+      <!-- ADD IMAGE -->
+      <div class="modal fade" id="modalRegisterForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
@@ -76,11 +77,11 @@ aria-hidden="true">
 </div>
 </form> 
 <div class="text-left">
-  <h3><a href="/products/<%= product._id %>/images/new" class="btn btn-default btn-rounded mb-4" data-toggle="modal" 
-    data-target="#modalRegisterForm1">ADD IMAGE</a></h3>
+  <h3><a href="/products/<%= product._id %>/images/new" class="btn btn-dark btn-rounded mb-4" data-toggle="modal" 
+    data-target="#modalRegisterForm1">Add An Image</a></h3>
 </div>
-
-<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<!-- ADD DUPE -->
+      <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
 aria-hidden="true">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
@@ -120,31 +121,83 @@ aria-hidden="true">
 </form> 
 
 <div class="text-left">
-  <h3><a href="/products/<%= product._id %>/dupes/new" class="btn btn-default btn-rounded mb-4" data-toggle="modal" 
-    data-target="#modalRegisterForm">ADD DUPE</a></h3>
+  <h3><a href="/products/<%= product._id %>/dupes/new" class="btn btn-dark btn-rounded mb-4" data-toggle="modal" 
+    data-target="#modalRegisterForm">Add A Dupe</a></h3>
 </div>
 
-<br><br><h3><a href="/products/<%= product._id %>/dupes/show">VIEW DUPE</a></td></h3>
+<!-- SHOW DUPE -->
+<h3 class = 'add-dupe'><a href="/products/<%= product._id %>/dupes/show" class="btn btn-dark btn-rounded mb-4" >View Dupes</a></h3>
+    </div>
 
-<br><br><h2>Reviews</h2>
-<form method="POST"
-  action="/products/<%= product._id %>/reviews">
-  <label>Review:</label>
-  <textarea name="content"></textarea>
-  <label>Rating:</label>
-  <select name="rating">
-    <option value="0">0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
-  <input type="submit" value="Add Review">
-</form>
+
+</div>
+
+<div class = "price">
+  <span>$<%= product.price %></span>
+  <!-- I got this from https://likebtn.com/en/ -->
+  <!-- LikeBtn.com BEGIN -->
+  <span class="likebtn-wrapper" data-theme="custom" data-icon_l="hrt2" data-icon_l_c_v="#fb0545" data-icon_d_c_v="#000000" data-ef_voting="buzz" data-identifier="like" data-counter_zero_show="true" data-share_size="large"></span>
+  <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+  <!-- LikeBtn.com END -->
+</div>
+
+</div>
+
+</main>
+
+<div class = 'line'></div>
+
+<div class = "bottom">
+<br><h2>Reviews & Ratings</h2>
+
+<div class="modal fade" id="modalRegisterForm5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Rate & Review The Product</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form action="/products/<%= product._id %>/reviews" method="POST" > 
+    <div class="modal-body mx-3">
+
+      <div class="md-form mb-4">
+        <p>Add A Product Review </p>
+        <textarea type="text" name="content" id="form32" class="form-control validate"></textarea>
+        <label data-error="wrong" data-success="right" for="form32"></label>
+      </div>
+      <div class="md-form mb-5">
+            <select class="form-control"  name="rating">
+              <p>Rate The Product </p>
+              <option value="" disabled selected>Ratings</option>
+                <option value="☆☆☆☆☆">☆☆☆☆☆</option>
+                <option value="★☆☆☆☆">★☆☆☆☆</option>
+                <option value="★★☆☆☆">★★☆☆☆</option>
+                <option value="★★★☆☆">★★★☆☆</option>
+                <option value="★★★★☆">★★★★☆</option>
+                <option value="★★★★★">★★★★★</option>
+            </select>
+        <label data-error="wrong" data-success="right" for="form32"></label>
+      </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-deep-orange" type="submit">Submit</button>
+    </div>
+  </div>
+</div>
+</div>
+</form> 
+<div >
+  <span>
+  <h3 class= "rate-link"><a href="/products/<%= product._id %>/reviews" class="btn btn-dark btn-rounded mb-4" data-toggle="modal" 
+    data-target="#modalRegisterForm5">Rate & Review</a></h3>
+  </span>
+</div>
 
 <% if (product.review.length) { %>
-  <table>
+  <div class="col-md-10">
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Review</th>
@@ -163,5 +216,9 @@ aria-hidden="true">
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>
+</div>
+
+</div>
+
   
 <%- include('../partials/footer') %>

@@ -14,8 +14,8 @@ router.delete('/:id', isLoggedIn, productsCtrl.delete);
 
 function isLoggedIn(req, res, next) {
     if ( req.isAuthenticated() ) return next();
-    res.send('Login')
-    //res.redirect('/auth/google');
+    //res.send('Login')
+    res.redirect('/auth/google');
 }
 
 module.exports = router;

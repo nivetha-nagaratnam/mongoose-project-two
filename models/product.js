@@ -5,9 +5,9 @@ const Schema = mongoose.Schema;
 const reviewSchema = new Schema({
   content: String,
   rating: {
-    type: Number,
-    enum: [0, 1, 2, 3, 4 ,5],
-  }
+    type: String,
+  },
+  user: String,
 }, {
   timestamps: true
 });
@@ -16,12 +16,6 @@ const userSchema = new Schema({
   name: String,
   email: String,
   googleId: String,
-}, {
-  timestamps: true
-}); 
-
-const likeSchema = new Schema({ 
-  likes_count: Number,
 }, {
   timestamps: true
 }); 
@@ -36,7 +30,6 @@ const productSchema = new Schema({
   },
   rating: {
     type: String,
-    //enum: [0, 1, 2, 3, 4 ,5],
   },
   description: {
     type: String,
