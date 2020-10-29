@@ -38,31 +38,91 @@
   <input type="submit" value="Add Product">
 </form> -->
 
-<div class="modal fade" id="modalRegisterForm3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-aria-hidden="true">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header text-center">
-      <h4 class="modal-title w-100 font-weight-bold">Add Image</h4>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <form action="/products" method="POST">
-    <div class="modal-body mx-3">
-      <div class="md-form mb-4">
-        <i class="fas fa-camera prefix grey-text"></i>
-        <input type="file" name="image" value="" class='form-control'>
-        <label data-error="wrong" data-success="right" for="form29"></label>
-      </div>
-    </div>
-    <div class="modal-footer d-flex justify-content-center">
-      <button class="btn btn-deep-orange" type="submit">Submit</button>
-    </div>
+<!-- Material form register -->
+<div class="card">
+
+  <h5 id = 'add-product' style="background-color: #f5b2b2">
+      <strong>Add Product</strong>
+  </h5>
+
+  <!--Card content-->
+  <div class="card-body px-lg-5 pt-0">
+
+      <!-- Form -->
+      <form action="/products" method="POST" class="text-center" style="color: #757575;" action="#!">
+
+          <div class="form-row">
+              <div class="col">
+                  <div class="md-form">
+                    <input type="text" name="name" class="form-control">
+                      <label for="materialRegisterFormFirstName">Product Name</label>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="md-form">
+                      <input type="text" name="brand" class="form-control">
+                      <label for="materialRegisterFormLastName">Brand</label>
+                  </div>
+              </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col">
+                <div class="md-form">
+                  <input type="text" name="colour" class="form-control">
+                    <label for="materialRegisterFormFirstName">Shade</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="md-form">
+                    <input type="text" name="price" class="form-control">
+                    <label for="materialRegisterFormLastName">Price</label>
+                </div>
+            </div>
+        </div>
+
+          <div class="md-form mt-0">
+              <input type="text" name="description" class="form-control">
+              <label data-error="wrong" data-success="right" for="form8">Product Description</label>
+          </div>
+
+
+          <div class="md-form">
+            <label class="mdb-main-label" ></label>
+            <select class="form-control"  name="category">
+              <option value="" disabled selected>Product Category</option>
+              <option value="face">Face</option>
+              <option value="lips">Lips</option>
+              <option value="cheeks">Cheeks</option>
+              <option value="eyes">Eyes</option>
+            </select>
+          </div>
+
+          <div class="md-form">
+            <label class="mdb-main-label" ></label>
+            <select class="form-control"  name="rating">
+              <option value="" disabled selected>Ratings</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+          </div>
+
+          <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Add Product</button>
+
+        
+          <hr>
+
+      </form>
+
   </div>
+
 </div>
-</div>
-</form> 
+
+
 
 
 
