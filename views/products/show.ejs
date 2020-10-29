@@ -3,6 +3,8 @@
         https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
         <head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+          
+          
           <style>
           .fa {
             font-size: 50px;
@@ -48,9 +50,80 @@
 <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
 <!-- LikeBtn.com END -->
 
+<div class="modal fade" id="modalRegisterForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Add Image</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form action="/products/<%= product._id %>/images" method="POST" enctype="multipart/form-data"> 
+    <div class="modal-body mx-3">
+      <div class="md-form mb-4">
+        <i class="fas fa-camera prefix grey-text"></i>
+        <input type="file" name="image" value="" class='form-control'>
+        <label data-error="wrong" data-success="right" for="form29"></label>
+      </div>
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-deep-orange" type="submit">Submit</button>
+    </div>
+  </div>
+</div>
+</div>
+</form> 
+<div class="text-left">
+  <h3><a href="/products/<%= product._id %>/images/new" class="btn btn-default btn-rounded mb-4" data-toggle="modal" 
+    data-target="#modalRegisterForm1">ADD IMAGE</a></h3>
+</div>
 
-<br><br><h3><a href="/products/<%= product._id %>/images/new">ADD IMAGE</a></td></h3>
-<br><br><h3><a href="/products/<%= product._id %>/dupes/new">ADD DUPE</a></td></h3>
+<div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header text-center">
+      <h4 class="modal-title w-100 font-weight-bold">Add Dupe</h4>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <form action="/products/<%= product._id %>/dupes" method="POST" enctype="multipart/form-data"> 
+    <div class="modal-body mx-3">
+      <div class="md-form mb-5">
+        <i class="fas fa-cart-plus prefix grey-text"></i>
+        <input type="text" name="name" id="orangeForm-name" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="orangeForm-name">Product Name</label>
+      </div>
+      <div class="md-form mb-5">
+        <i class="fas fa-dollar-sign prefix grey-text"></i>
+        <input type="text" name="price"id="form32" class="form-control validate">
+        <label data-error="wrong" data-success="right" for="form32">Product Price</label>
+      </div>
+
+      <div class="md-form mb-4">
+        <i class="fas fa-camera prefix grey-text"></i>
+        <input type="file" name="image" id = "form29" value="" class='form-control'>
+        <label data-error="wrong" data-success="right" for="form29"></label>
+      </div>
+
+    </div>
+    <div class="modal-footer d-flex justify-content-center">
+      <button class="btn btn-deep-orange" type="submit">Submit</button>
+    </div>
+  </div>
+</div>
+</div>
+
+</form> 
+
+<div class="text-left">
+  <h3><a href="/products/<%= product._id %>/dupes/new" class="btn btn-default btn-rounded mb-4" data-toggle="modal" 
+    data-target="#modalRegisterForm">ADD DUPE</a></h3>
+</div>
+
 <br><br><h3><a href="/products/<%= product._id %>/dupes/show">VIEW DUPE</a></td></h3>
 
 <br><br><h2>Reviews</h2>
