@@ -2,14 +2,14 @@
 
 ## **App Title** 
 
-The Our Little Secret is a full-stack CRUD app that allows users to find makeup products and their dupes. There are a very few websites that showcase this 
+Our Little Secret is a full-stack CRUD app that allows users to find makeup products and their dupes. There are a very few websites that showcase this 
 information to users. This app was created to allow users to view and upload products and their dupes, so that they can save some money. Here's to hoping Our Little Secret App will create a money saving makeup community!
 
 ## **Screenshots** 
 
 <img src="Landing Page.png" alt="App's Landing Page" width="800" height="500"/>
 
-When clicking the game link, this is the first page that will show up. Click the candy cane to enter the game.
+This is the app's landing page.
 
 <img src="Add A Product Page.png" width="800" height="500"/>
 
@@ -33,7 +33,7 @@ Technologies used were HTML, CSS, JavaScript, Node, Express, MongoDB, & Bootstra
 
 ## **Getting Started** 
 
-Click here to visit the Our Little Secret App. Hope you enjoy it! https://makeup-products-app.herokuapp.com/
+Click here to visit Our Little Secret App. Hope you enjoy it! https://makeup-products-app.herokuapp.com/
 Click here to see how I used a Trello Board to track my progress. https://trello.com/b/vAe8cxbN/project-2
 
 ## **Next Steps** 
