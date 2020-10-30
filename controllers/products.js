@@ -38,18 +38,18 @@ function indexEyes(req, res) {
 
 
 function newProduct(req, res) {
-    res.render('products/new',{ title: 'Add Product', user: req.user, name: req.query.name});
-    res.redirect('/products/index')
+  res.render('products/new',{ title: 'Add Product', user: req.user, name: req.query.name});
+  res.redirect('/products/index')
 }
 
 function create(req, res) {
   const product = new Product(req.body);
   product.save(function(err) {
     // one way to handle errors
-    if (err) return res.render('products/new');
+  if (err) return res.render('products/new');
     console.log(product);
     // for now, redirect right back to new.ejs
-    res.redirect('/products/new');
+  res.redirect('/products/new');
   });
 }
 
@@ -61,14 +61,14 @@ function deleteProduct(req, res) {
 
 
 module.exports = {
-    new: newProduct,
-    create,
-    index,
-    show,
-    delete:deleteProduct,
-    indexLips,
-    indexCheeks,
-    indexEyes,
-    indexFace,
+  new: newProduct,
+  create,
+  index,
+  show,
+  delete:deleteProduct,
+  indexLips,
+  indexCheeks,
+  indexEyes,
+  indexFace,
   
-  };
+};

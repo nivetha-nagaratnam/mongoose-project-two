@@ -1,74 +1,27 @@
 <%- include('../partials/header') %>
 
-<!-- <h2>Enter a New Product</h2>
-<form action="/products" method="POST">
-  <label>Name:
-    <input type="text" name="name">
-  </label><br>
-  <label>Brand:
-    <input type="text" name="brand">
-  </label><br>
-  <label>Description:
-    <input type="text" name="description">
-  </label><br>
-  <label>Category:
-    <select name="category">
-      <option value="face">Face</option>
-      <option value="lips">Lips</option>
-      <option value="cheeks">Cheeks</option>
-      <option value="eyes">Eyes</option>
-    </select>
-  </label><br>
-  <label>Colour:
-    <input type="text" name="colour">
-  </label><br>
-  <label>Price:
-    <input type="text" name="price">
-  </label><br>
-  <label>Ratings:
-    <select name="rating">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-  </label><br>
-  <input type="submit" value="Add Product">
-</form> -->
-
-<!-- Material form register -->
 
 <div class = "container my-5 py-5 z-depth-1">
-
-        <!--Grid column-->
-        <div class="col-md-10">
-
-  <!-- Card content -->
+    <div class="col-md-10">
     <div class="card-body px-lg-5 pt-0"> 
-
-      <!-- Form  -->
-      <form action="/products" method="POST" class="text-center" style="color: #757575;" action="#!">
-
-        <h5 class = "h4 mb-4" >
-          <strong>Add Product</strong>
+    <form action="/products" method="POST" class="text-center" style="color: #757575;" action="#!">
+      <h5 class = "h4 mb-4" >
+        <strong>Add Product</strong>
       </h5>
-
-          <div class="form-row">
-              <div class="col">
-                  <div class="md-form">
-                    <input type="text" name="name" class="form-control">
-                      <label for="materialRegisterFormFirstName">Product Name</label>
-                  </div>
-              </div>
-              <div class="col">
-                  <div class="md-form">
-                      <input type="text" name="brand" class="form-control">
-                      <label for="materialRegisterFormLastName">Brand</label>
-                  </div>
-              </div>
-          </div>
+     <div class="form-row">
+        <div class="col">
+        <div class="md-form">
+          <input type="text" name="name" class="form-control">
+          <label for="materialRegisterFormFirstName">Product Name</label>
+         </div>
+        </div>
+        <div class="col">
+        <div class="md-form">
+          <input type="text" name="brand" class="form-control">
+          <label for="materialRegisterFormLastName">Brand</label>
+        </div>
+        </div>
+      </div>
 
           <div class="form-row">
             <div class="col">
@@ -116,18 +69,9 @@
           </div>
 
           <button class="btn btn-dark btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Add Product</button>
-
-        
           <hr>
-
       </form>
-
   </div>
-
 </div>
-
-
-
-
 
 <%- include('../partials/footer') %>

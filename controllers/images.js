@@ -59,7 +59,7 @@ function create(req, res, next) {
         
 }; 
   
-  module.exports = {
-      new: newProduct,
-      create,
-    };
+module.exports = {
+    new: newProduct,
+    create,
+};

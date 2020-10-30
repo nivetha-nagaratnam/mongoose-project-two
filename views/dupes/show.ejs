@@ -1,31 +1,30 @@
 <%- include('../partials/header') %>
+
     <!-- code to upload/retrive images was taken from 
         https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
   
   <h2 class = "dupe-image">Images of Dupes</h2>
-  <div class = "grid">
-  <div class="row row-cols-1 row-cols-md-3">
-    <div class="row">
-      <div class="col-mb-4">
-        <div class="card-deck">
-            <% product.imgs.forEach(function(images) { %>  
-            <div class="view overlay">
-                <img class="card-img-top" src="data:image/<%=images.imgs.contentType%>;base64, 
-                 <%=images.imgs.data.toString('base64')%>"> 
-                 <div class="card-footer">
-                    <h5 class = "card-text"> <%= images.name %> </h5> 
+    <div class = "grid">
+      <div class="row row-cols-1 row-cols-md-3">
+        <div class="row">
+          <div class="col-mb-4">
+             <div class="card-deck">
+               <% product.imgs.forEach(function(images) { %>  
+                  <div class="view overlay">
+                    <img class="card-img-top" src="data:image/<%=images.imgs.contentType%>;base64, 
+                    <%=images.imgs.data.toString('base64')%>"> 
+                  <div class="card-footer">
+                  <h5 class = "card-text"> <%= images.name %> </h5> 
+                  <h5 class = "card-text"> $<%= images.price %> </h5> 
+                  </div>
 
-                    <h5 class = "card-text"> $<%= images.price %> </h5> 
-                </div>
+                  </div>
+                <% }) %>
               </div>
-              <% }) %>
-         </div>
-        </div>
-     </div>         
- </div>
-</div>
-
-
+              </div>
+          </div>         
+      </div>
+    </div>
 
 <%- include('../partials/footer') %>
 

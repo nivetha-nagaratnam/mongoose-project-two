@@ -1,36 +1,35 @@
 <%- include('../partials/header') %>    
 
 <div class = "grid">
- <div class="row row-cols-1 row-cols-md-3">
+  <div class="row row-cols-1 row-cols-md-3">
       <div class="row">
         <div class="col-mb-4">
           <div class="card-deck">
             <% product.forEach(function(p) { %>
               <div class="view overlay">
                 <% p.img.forEach(function(image) { %>  
-                  <img class="card-img-top" src="data:image/<%=image.img.contentType%>;base64, 
-                   <%=image.img.data.toString('base64')%>"> 
-                   <% }) %> 
-                  <div class="card-body">
-                      <p class="card-text"><%= p.name %> </p>
-                      <p class="card-text"><%= '$' + p.price %> </p>
-                      <p class="card-text"><%= p.rating %> </p>
-                  </div>
-                  <div class="card-footer">
-                    <a href="/products/<%= p._id %>" style = "color: #ffffff" class="btn btn-dark">DETAILS</a> 
-                    <% if (user) { %>
-                     <form action="/products/<%= p.id %>?_method=DELETE" method="POST">
-                            <button  style = "color: #ffffff" class="btn btn-dark" type="submit">DELETE</button>
-                      </form>
-
-                      <% } %>
-                  </div>
-                </div>
+                <img class="card-img-top" src="data:image/<%=image.img.contentType%>;base64, 
+                <%=image.img.data.toString('base64')%>"> 
+                <% }) %> 
+              <div class="card-body">
+                <p class="card-text"><%= p.name %> </p>
+                <p class="card-text"><%= '$' + p.price %> </p>
+                <p class="card-text"><%= p.rating %> </p>
+              </div>
+              <div class="card-footer">
+                <a href="/products/<%= p._id %>" style = "color: #ffffff" class="btn btn-dark">DETAILS</a> 
+                <% if (user) { %>
+                <form action="/products/<%= p.id %>?_method=DELETE" method="POST">
+                  <button  style = "color: #ffffff" class="btn btn-dark" type="submit">DELETE</button>
+                </form>
+              <% } %>
+              </div>
+              </div>
              <% }); %>
            </div>
           </div>
        </div>         
-   </div>
+    </div>
   </div>
 
   

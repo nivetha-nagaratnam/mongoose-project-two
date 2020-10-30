@@ -68,8 +68,8 @@ function show(req, res) {
   }
 
   
-  module.exports = {
-      new: newProduct,
-      create,
-      show
-    };
+module.exports = {
+    new: newProduct,
+    create,
+    show
+};
