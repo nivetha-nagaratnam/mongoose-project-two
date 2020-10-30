@@ -1,30 +1,15 @@
 <%- include('../partials/header') %>
    <!-- code to upload/retrive images was taken from 
         https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
-<head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-          
-          
-<style>
-.fa {
-font-size: 50px;
-cursor: pointer;
-user-select: none;
-}
-          
-.fa:hover {
- color: darkblue;
-          }
-</style>
-</head>
+
 
 <main class="container">
 
 <div class = "left-side">
-  <div id = "imageProduct"> 
+  <div> 
     <% product.img.forEach(function(image) { %>  
     <div> 
-    <div> 
+    <div id = "imageProduct"> 
      <img src="data:image/<%=image.img.contentType%>;base64, 
     <%=image.img.data.toString('base64')%>"> 
     </div> 
@@ -32,10 +17,7 @@ user-select: none;
      <% }) %> 
   </div> 
 
-
-
 </div>
-
 
 <div class = "right-side">
 
@@ -166,6 +148,11 @@ aria-hidden="true">
     <div class="modal-body mx-3">
 
       <div class="md-form mb-4">
+        <div class="md-form mb-4">
+          <p>Enter Your Name</p>
+          <input type="text" name="user" id="form32" class="form-control validate"></input>
+          <label data-error="wrong" data-success="right" for="form32"></label>
+        </div>
         <p>Add A Product Review </p>
         <textarea type="text" name="content" id="form32" class="form-control validate"></textarea>
         <label data-error="wrong" data-success="right" for="form32"></label>
@@ -203,6 +190,7 @@ aria-hidden="true">
   <table class="table table-hover">
     <thead>
       <tr>
+        <th>User</th>
         <th>Review</th>
         <th>Rating</th>
       </tr>
@@ -210,8 +198,9 @@ aria-hidden="true">
     <tbody>
       <% product.review.forEach(function(r) { %>
         <tr>
+          <td><%= r.user %></td>
           <td><%= r.content %></td>
-          <td><%= r.rating %></td>
+          <td><%= r.rating %> </td>
         </tr>
       <% }); %>
     </tbody>

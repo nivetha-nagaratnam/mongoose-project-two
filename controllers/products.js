@@ -39,6 +39,7 @@ function indexEyes(req, res) {
 
 function newProduct(req, res) {
     res.render('products/new',{ title: 'Add Product', user: req.user, name: req.query.name});
+    res.redirect('/products/index')
 }
 
 function create(req, res) {
@@ -54,7 +55,7 @@ function create(req, res) {
 
 function deleteProduct(req, res) {
   Product.findByIdAndRemove(req.params.id,function(err, product){
-    res.redirect('/')
+    res.redirect('/products/index')
   });
 }
 

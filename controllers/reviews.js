@@ -7,9 +7,8 @@ function create(req, res) {
         res.redirect(`/products/${product._id}`);
       });
     });
-  }
- 
+}
  module.exports = {
-   create
- };
+   create,
+ }
  
