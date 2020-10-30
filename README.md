@@ -19,7 +19,7 @@ This is the form used to add a new makeup product.
 
 This is the page used to view all of the makeup products.
 
-<img src="Product Details.png" width="800" height="500"/>
+<img src=" Product Details.png" width="800" height="500"/>
 
 This is the page used to see a specific product's details.
 
