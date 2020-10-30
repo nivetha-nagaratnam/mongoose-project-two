@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
     <!-- code to upload/retrive images was taken from 
         https://www.geeksforgeeks.org/upload-and-retrieve-image-on-mongodb-using-mongoose/ -->
-    
+  
+  <h2 class = "dupe-image">Images of Dupes</h2>
   <div class = "grid">
   <div class="row row-cols-1 row-cols-md-3">
     <div class="row">
@@ -13,7 +14,7 @@
                  <%=images.imgs.data.toString('base64')%>"> 
                  <div class="card-footer">
                     <h5 class = "card-text"> <%= images.name %> </h5> 
-                    
+
                     <h5 class = "card-text"> $<%= images.price %> </h5> 
                 </div>
               </div>

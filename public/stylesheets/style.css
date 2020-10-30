@@ -10,6 +10,11 @@ h1  {
   font-size: 40px;
 }
 
+.dupe-image {
+  font-family: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
 #front {
   max-width: 100%;
   width: 1820px;
