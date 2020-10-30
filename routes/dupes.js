@@ -21,8 +21,8 @@ router.post('/products/:id/dupes', upload.single('image'), dupesCtrl.create);
 
 function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();
-  res.send('Login')
-  //res.redirect('/auth/google');
+  //res.send('Login')
+  res.redirect('/auth/google');
 }
 
 module.exports = router;

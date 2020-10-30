@@ -27,31 +27,34 @@
     <h1>Our Little Secret</h1>
     <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
       <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"> <a class="nav-link" href="/"  style = "color: #070707"
+          <%- title === 'Home Page' ? 'class="active"' : '' %>>Home Page</a>
+        </li>
         <% if (user) { %>
         <li class="nav-item active"> <a class="nav-link" href="/products/new"  style = "color: #070707"
-          <%- title === 'Add Product' ? 'class="active"' : '' %>>ADD PRODUCT</a>
+          <%- title === 'Add Product' ? 'class="active"' : '' %>>Add A Product</a>
         </li>
         <% } %>
     
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style = "color: #070707">PRODUCTS</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style = "color: #070707">Products</a>
           <div class="dropdown-menu">
           <a class="dropdown-item" href="/products/index"  style = "color: #070707" role="button" aria-haspopup="true" aria-expanded="false"
-          <%- title === 'All Products' ? 'class="active"' : '' %>>All Products</a>
-          <a class="dropdown-item" href="/products/lips">Lip Products</a>
-          <a class="dropdown-item" href="/products/cheeks">Cheek Products</a>
-          <a class="dropdown-item" href="/products/face">Face Products</a>
-          <a class="dropdown-item" href="/products/eyes">Eye Products</a>
+          <%- title === 'All Products' ? 'class="active"' : '' %>>View All Products</a>
+          <a class="dropdown-item" href="/products/lips"> View Lip Products</a>
+          <a class="dropdown-item" href="/products/cheeks"> View Cheek Products</a>
+          <a class="dropdown-item" href="/products/face"> View Face Products</a>
+          <a class="dropdown-item" href="/products/eyes"> View Eye Products</a>
           </div>
         </li>
 
         <li class="nav-item active">
           <% if (user) { %>
             <a class="nav-link"  href="/logout" style = "color: #070707"
-            <%- title === 'Log Out' ? 'class="active"' : '' %>>LOG OUT</a>
+            <%- title === 'Log Out' ? 'class="active"' : '' %>>Log Out</a>
           <% } else { %>
               <a class="nav-link"  href="/auth/google" style = "color: #070707"
-              <%- title === 'Log In' ? 'class="active"' : '' %>>LOG IN WITH GOOGLE</a>
+              <%- title === 'Log In' ? 'class="active"' : '' %>>Log In With Google</a>
           <% } %>
         </li>
       </ul>

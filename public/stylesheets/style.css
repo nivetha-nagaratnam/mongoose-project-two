@@ -63,7 +63,9 @@ a {
   color: white;
 }
 
-.card {display:inline-block;}
+.card {
+  display:inline-block;
+}
 
 .card-footer{
   display: flex;
@@ -200,6 +202,9 @@ a {
 .col-md-10{
   margin-left: 100px;
 }
+
+
+
 
  
 
