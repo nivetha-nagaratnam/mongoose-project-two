@@ -11,6 +11,10 @@ information to users. This app was created to allow users to view and upload pro
 
 This is the app's landing page.
 
+<img src="Google Oauth Page.png" width="800" height="500"/>
+
+This is the Google Oauth Page that pops up when you click on Log In.
+
 <img src="Add A Product Page.png" width="800" height="500"/>
 
 This is the form used to add a new makeup product.
